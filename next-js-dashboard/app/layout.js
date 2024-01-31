@@ -1,5 +1,6 @@
+import MainLayout from "@/components/MainLayout";
 import "./globals.css";
-
+import MenuContextProvider from "@/context/MenuContext";
 
 export const metadata = {
   title: "Next JS Dashboard",
@@ -9,7 +10,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+
+        <MenuContextProvider>
+
+        <MainLayout>{children}</MainLayout>
+        </MenuContextProvider>
+      </body>
     </html>
   );
 }
